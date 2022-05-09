@@ -1,0 +1,21 @@
+.div {
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 1px;
+  margin: 5px;
+  background-color: azure;
+}
+
+.ul {
+  padding: 5px;
+  margin: 0px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.h1 {
+  font-size: 1.2em;
+  margin: 0px;
+}
