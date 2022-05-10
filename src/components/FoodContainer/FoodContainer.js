@@ -1,11 +1,11 @@
 import React from "react"
 import FoodType from "../FoodType/FoodType"
-import "./FoodContainer.css"
+import styles from "./FoodContainer.module.css"
 
 const FoodContainer = props => {
   const foodTypes = props.def
   return (
-    <div>
+    <div className={styles.div}>
       {foodTypes.map(foodType => (
         <FoodType def={foodType} key={foodType.name} />
       ))}

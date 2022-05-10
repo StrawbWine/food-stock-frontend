@@ -1,6 +1,6 @@
 import "./App.css"
-import FoodType from "./components/FoodType/FoodType"
 import FoodContainer from "./components/FoodContainer/FoodContainer"
+import Header from "./components/Header/Header"
 
 const bpp = {
   name: "Billy's Pan Pizza",
@@ -19,6 +19,7 @@ const foodTypes = [bpp, jarlsberg]
 function App() {
   return (
     <div className="App">
+      <Header />
       <FoodContainer def={foodTypes} />
     </div>
   )
