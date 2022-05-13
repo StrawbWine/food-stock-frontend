@@ -1,4 +1,5 @@
 import "./App.css"
+import AddFoodTypeForm from "./components/AddFoodTypeForm/AddFoodTypeForm"
 import FoodContainer from "./components/FoodContainer/FoodContainer"
 import Header from "./components/Header/Header"
 
@@ -21,6 +22,7 @@ function App() {
     <div className="App">
       <Header />
       <FoodContainer def={foodTypes} />
+      <AddFoodTypeForm />
     </div>
   )
 }
