@@ -1,3 +1,5 @@
+import {useState} from "react"
+
 import "./App.css"
 import AddFoodTypeForm from "./components/AddFoodTypeForm/AddFoodTypeForm"
 import FoodContainer from "./components/FoodContainer/FoodContainer"
@@ -15,14 +17,27 @@ const jarlsberg = {
   weight: 700,
 }
 
-const foodTypes = [bpp, jarlsberg]
+const initialFoodTypes = [bpp, jarlsberg]
 
 function App() {
+
+  const [foodTypes, setFoodTypes] = useState(initialFoodTypes)
+
+  const handleFoodSubmit = event => {
+    event.preventDefault()
+    const newFoodType = {
+      name: document.getElementById("foodName").value,
+      calories: document.getElementById("calories").value,
+      weight: document.getElementById("weight").value,
+    }
+    setFoodTypes([newFoodType, ...foodTypes])
+  }
+
   return (
     <div className="App">
       <Header />
       <FoodContainer def={foodTypes} />
-      <AddFoodTypeForm />
+      <AddFoodTypeForm  handleFoodSubmit={handleFoodSubmit} />
     </div>
   )
 }

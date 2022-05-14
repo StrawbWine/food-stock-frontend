@@ -2,9 +2,15 @@
     display: flex;
     flex-direction: column;
     padding: 20px;
-    padding-right: 500px;
+    
 }
 
 input {
     margin-top: 2px;
+}
+
+.frame {
+    display: inline-block;
+    border: 1px solid black;
+    text-align: center;
 }
