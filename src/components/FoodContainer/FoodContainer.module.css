@@ -1,4 +1,7 @@
 .div {
   display: flex;
-  padding-left: 10px;
+  padding: 5px;
+  border: solid 3px rgb(2, 153, 108);
+  border-radius: 3px;
+  margin: 10px;
 }

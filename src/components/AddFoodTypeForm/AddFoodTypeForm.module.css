@@ -1,16 +1,30 @@
 .form {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 10px;
+  margin-top: -10px;
 }
 
 input {
-    margin-top: 2px;
+  margin-top: 2px;
+}
+
+.submit {
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  background-color: rgb(248, 165, 165);
+  border-style: none;
+  border-radius: 5px;
+  padding: 5px;
+  font-style: italic;
 }
 
 .frame {
-    display: inline-block;
-    border: 1px solid black;
-    text-align: center;
+  display: inline-block;
+  border: 3px solid rgb(43, 3, 138);
+  border-radius: 3px;
+  text-align: center;
+  margin-left: 15px;
 }
