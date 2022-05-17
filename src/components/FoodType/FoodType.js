@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import styles from "./FoodType.module.css"
 
 const FoodType = props => {
-  const { name, calories, weight } = props.def
+  const { name, kcalPerHundredGrams, weightInGrams, description } = props.def
 
   const [count, setCount] = useState(0)
 
@@ -10,8 +10,9 @@ const FoodType = props => {
     <div className={styles.div}>
       <ul className={styles.ul}>
         <h1 className={styles.h1}>{name}</h1>
-        <li>Number of calories: {calories}</li>
-        <li>Weight: {weight}</li>
+        <li>Description: {description}</li>
+        <li>Number of calories: {kcalPerHundredGrams}</li>
+        <li>Weight: {weightInGrams}</li>
       </ul>
       <div className={styles.buttonPanel}>
         <button
@@ -27,7 +28,7 @@ const FoodType = props => {
           -
         </button>
         <div className={styles.countBox}>
-          <span class={styles.count}>{count}</span>
+          <span className={styles.count}>{count}</span>
         </div>
       </div>
     </div>

@@ -8,6 +8,8 @@ const AddFoodTypeForm = ({ handleFoodSubmit }) => {
         <h3>Add new food type</h3>
         <label>Name of food type</label>
         <input type="text" id="foodName" placeholder="Banana, pizza" />
+        <label>Description of food type</label>
+        <input type="text" id="description" placeholder="A tasty snack. Epic!" />
         <label>Number of calories</label>
         <input type="text" id="calories" placeholder="0" />
         <label>Weight</label>
