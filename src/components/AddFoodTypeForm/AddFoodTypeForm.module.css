@@ -23,7 +23,7 @@ input {
 
 .frame {
   display: inline-block;
-  border: 3px solid rgb(43, 3, 138);
+  border: 2px solid rgb(43, 3, 138);
   border-radius: 3px;
   text-align: center;
   margin-left: 15px;
