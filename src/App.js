@@ -36,7 +36,7 @@ function App() {
     }
   }
 
-  useEffect(() => fetchFoodTypes, [])
+  useEffect(() => fetchFoodTypes, [foodTypes])
 
   const handleFoodSubmit = async event => {
     event.preventDefault()
@@ -53,7 +53,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <FoodContainer def={foodTypes} />
+      <FoodContainer def={foodTypes} fetchFoodTypes={fetchFoodTypes} />
       <AddFoodTypeForm  handleFoodSubmit={handleFoodSubmit} />
     </div>
   )

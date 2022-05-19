@@ -1,10 +1,18 @@
 import React, { useState } from "react"
 import styles from "./FoodType.module.css"
+import axios from "axios"
 
 const FoodType = props => {
-  const { name, kcalPerHundredGrams, weightInGrams, description } = props.def
+  const API_URL = process.env.REACT_APP_API_URL
+
+  const { id, name, kcalPerHundredGrams, weightInGrams, description, fetchFoodTypes } = props.def
 
   const [count, setCount] = useState(0)
+
+  const handleDelete = async () => {
+    await axios.delete(`${API_URL}/foodtypes/${id}`)
+    fetchFoodTypes()
+  }
 
   return (
     <div className={styles.div}>
@@ -30,6 +38,9 @@ const FoodType = props => {
         <div className={styles.countBox}>
           <span className={styles.count}>{count}</span>
         </div>
+        <button className={styles.deleteButton} onClick={handleDelete}>
+          DELETE
+        </button>
       </div>
     </div>
   )
