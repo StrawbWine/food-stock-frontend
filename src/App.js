@@ -1,10 +1,8 @@
-import {useEffect, useState} from "react"
-
 import "./App.css"
 import AddFoodTypeForm from "./components/AddFoodTypeForm/AddFoodTypeForm"
 import FoodContainer from "./components/FoodContainer/FoodContainer"
 import Header from "./components/Header/Header"
-import axios from "axios"
+import useApi from "./hooks/useApi"
 
 // const bpp = {
 //   name: "Billy's Pan Pizza",
@@ -25,36 +23,13 @@ function App() {
   //const [foodTypes, setFoodTypes] = useState(initialFoodTypes)
   const API_URL = process.env.REACT_APP_API_URL
 
-  const [foodTypes, setFoodTypes] = useState([])
-
-  const fetchFoodTypes = async () => {
-    try {      
-      const result = await axios.get(`${API_URL}/foodtypes`)      
-      setFoodTypes(result.data)
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
-  useEffect(() => fetchFoodTypes, [foodTypes])
-
-  const handleFoodSubmit = async event => {
-    event.preventDefault()
-    const newFoodType = {
-      name: document.getElementById("foodName").value,
-      description: document.getElementById("description").value,
-      kcalPerHundredGrams: document.getElementById("calories").value,
-      weightInGrams: document.getElementById("weight").value,
-    }    
-    await axios.post(`${API_URL}/foodtypes`, newFoodType)    
-    fetchFoodTypes()
-  }
+  const [foodTypes, getFoodTypes] = useApi(`${API_URL}/foodtypes`)
 
   return (
     <div className="App">
       <Header />
-      <FoodContainer def={foodTypes} fetchFoodTypes={fetchFoodTypes} />
-      <AddFoodTypeForm  handleFoodSubmit={handleFoodSubmit} />
+      <FoodContainer def={foodTypes} getFoodTypes={getFoodTypes} />
+      <AddFoodTypeForm getFoodTypes={getFoodTypes} />
     </div>
   )
 }

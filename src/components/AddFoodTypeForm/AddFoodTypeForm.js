@@ -1,7 +1,23 @@
 import React from "react"
 import styles from "./AddFoodTypeForm.module.css"
+import axios from "axios"
 
-const AddFoodTypeForm = ({ handleFoodSubmit }) => {
+const AddFoodTypeForm = ({ getFoodTypes }) => {
+
+  const API_URL = process.env.REACT_APP_API_URL
+
+  const handleFoodSubmit = async event => {
+    event.preventDefault()
+    const newFoodType = {
+      name: document.getElementById("foodName").value,
+      description: document.getElementById("description").value,
+      kcalPerHundredGrams: document.getElementById("calories").value,
+      weightInGrams: document.getElementById("weight").value,
+    }
+    await axios.post(`${API_URL}/foodtypes`, newFoodType)    
+    getFoodTypes()
+  }
+
   return (
     <div className={styles.frame}>
       <form className={styles.form} onSubmit={handleFoodSubmit}>
