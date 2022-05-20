@@ -1,7 +1,19 @@
 import React from "react"
 import styles from "./AddFoodTypeForm.module.css"
 
-const AddFoodTypeForm = ({ handleFoodSubmit }) => {
+const AddFoodTypeForm = ({ getFoodTypes, addFoodType }) => {
+  const handleFoodSubmit = event => {
+    event.preventDefault()
+    const newFoodType = {
+      name: document.getElementById("foodName").value,
+      description: document.getElementById("description").value,
+      kcalPerHundredGrams: document.getElementById("calories").value,
+      weightInGrams: document.getElementById("weight").value,
+    }
+    addFoodType(newFoodType)
+    getFoodTypes()
+  }
+
   return (
     <div className={styles.frame}>
       <form className={styles.form} onSubmit={handleFoodSubmit}>
