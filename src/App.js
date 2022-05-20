@@ -33,7 +33,7 @@ function App() {
   // const fetchFoodTypes = async () => {
   //   try {      
   //     const result = await axios.get(`${API_URL}/foodtypes`)      
-  //     getFoodTypes(result.data)
+  //     setFoodTypes(result.data)
   //   } catch (error) {
   //     console.error(error);
   //   }
