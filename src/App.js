@@ -25,31 +25,6 @@ function App() {
 
   const [foodTypes, getFoodTypes] = useApi(`${API_URL}/foodtypes`)
 
-  // const [foodTypes, setFoodTypes] = useState([])
-
-  // const fetchFoodTypes = async () => {
-  //   try {      
-  //     const result = await axios.get(`${API_URL}/foodtypes`)      
-  //     setFoodTypes(result.data)
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // }
-
-  // useEffect(() => fetchFoodTypes, [foodTypes])
-
-  // const handleFoodSubmit = async event => {
-  //   event.preventDefault()
-  //   const newFoodType = {
-  //     name: document.getElementById("foodName").value,
-  //     description: document.getElementById("description").value,
-  //     kcalPerHundredGrams: document.getElementById("calories").value,
-  //     weightInGrams: document.getElementById("weight").value,
-  //   }    
-  //   await axios.post(`${API_URL}/foodtypes`, newFoodType)    
-  //   fetchFoodTypes()
-  // }
-
   return (
     <div className="App">
       <Header />
