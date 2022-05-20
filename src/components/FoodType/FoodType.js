@@ -5,13 +5,13 @@ import axios from "axios"
 const FoodType = props => {
   const API_URL = process.env.REACT_APP_API_URL
 
-  const { id, name, kcalPerHundredGrams, weightInGrams, description, getFoodTypes, deleteFoodType } = props.def
+  const { id, name, kcalPerHundredGrams, weightInGrams, description } = props.def
 
   const [count, setCount] = useState(0)
 
   const handleDelete = async () => {
-    deleteFoodType(id)
-    getFoodTypes()
+    await axios.delete(`${API_URL}/foodtypes/${id}`)
+    props.getFoodTypes()
   }
 
   return (

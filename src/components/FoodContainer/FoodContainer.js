@@ -7,7 +7,7 @@ const FoodContainer = props => {
   return (
     <div className={styles.div}>
       {foodTypes.map(foodType => (
-        <FoodType def={foodType} key={foodType.id} getFoodTypes={props.getFoodTypes} deleteFoodType={props.deleteFoodType}/>
+        <FoodType def={foodType} key={foodType.id} getFoodTypes={props.getFoodTypes} />
       ))}
     </div>
   )

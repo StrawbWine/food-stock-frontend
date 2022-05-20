@@ -1,10 +1,7 @@
-import {useEffect, useState} from "react"
-
 import "./App.css"
 import AddFoodTypeForm from "./components/AddFoodTypeForm/AddFoodTypeForm"
 import FoodContainer from "./components/FoodContainer/FoodContainer"
 import Header from "./components/Header/Header"
-import axios from "axios"
 import useApi from "./hooks/useApi"
 
 // const bpp = {
@@ -26,7 +23,7 @@ function App() {
   //const [foodTypes, setFoodTypes] = useState(initialFoodTypes)
   const API_URL = process.env.REACT_APP_API_URL
 
-  const [foodTypes, getFoodTypes, addFoodType, deleteFoodType] = useApi(`${API_URL}/foodtypes`)
+  const [foodTypes, getFoodTypes] = useApi(`${API_URL}/foodtypes`)
 
   // const [foodTypes, setFoodTypes] = useState([])
 
@@ -56,8 +53,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <FoodContainer def={foodTypes} getFoodTypes={getFoodTypes} deleteFoodType={deleteFoodType} />
-      <AddFoodTypeForm addFoodType={addFoodType} getFoodTypes={getFoodTypes} />
+      <FoodContainer def={foodTypes} getFoodTypes={getFoodTypes} />
+      <AddFoodTypeForm getFoodTypes={getFoodTypes} />
     </div>
   )
 }
