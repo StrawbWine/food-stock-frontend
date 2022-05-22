@@ -1,0 +1,13 @@
+.ul {
+  padding: 5px;
+  margin: 0px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.h1 {
+  font-size: 1.2em;
+  margin: 0px;
+}

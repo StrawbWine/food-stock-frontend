@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <FoodContainer def={foodTypes} getFoodTypes={getFoodTypes} />
+      <FoodContainer foodTypes={foodTypes} getFoodTypes={getFoodTypes} />
       <AddFoodTypeForm getFoodTypes={getFoodTypes} />
     </div>
   )

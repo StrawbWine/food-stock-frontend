@@ -2,20 +2,19 @@ import React, { useState } from "react"
 import axios from "axios"
 
 import ButtonPanel from "../ButtonPanel/ButtonPanel"
+import FoodInfo from "../FoodInfo/FoodInfo"
 
 import styles from "./FoodType.module.css"
 
 
-const FoodType = props => {
+const FoodType = ({ data, getFoodTypes }) => {
   const API_URL = process.env.REACT_APP_API_URL
-
-  const { id, name, kcalPerHundredGrams, weightInGrams, description } = props.def
 
   const [count, setCount] = useState(0)
 
   const handleDelete = async () => {
-    await axios.delete(`${API_URL}/foodtypes/${id}`)
-    props.getFoodTypes()
+    await axios.delete(`${API_URL}/foodtypes/${data.id}`)
+    getFoodTypes()
   }
 
   const onPlusClick = () => setCount(count + 1)
@@ -23,13 +22,8 @@ const FoodType = props => {
   const onMinusClick = () => setCount(count - 1)
 
   return (
-    <div className={styles.div}>
-      <ul className={styles.ul}>
-        <h1 className={styles.h1}>{name}</h1>
-        <li>Description: {description}</li>
-        <li>Number of calories: {kcalPerHundredGrams}</li>
-        <li>Weight: {weightInGrams}</li>
-      </ul>
+    <div className={styles.foodType}>
+      <FoodInfo data={data} />
       <ButtonPanel        
         handleDelete={handleDelete}
         count={count}
