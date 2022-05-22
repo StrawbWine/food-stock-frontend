@@ -30,26 +30,6 @@ const FoodType = props => {
         <li>Number of calories: {kcalPerHundredGrams}</li>
         <li>Weight: {weightInGrams}</li>
       </ul>
-      {/* <div className={styles.buttonPanel}>
-        <button
-          className={styles.plusButton}
-          onClick={() => setCount(count + 1)}
-        >
-          +
-        </button>
-        <button
-          className={styles.minusButton}
-          onClick={() => setCount(count - 1)}
-        >
-          -
-        </button>
-        <div className={styles.countBox}>
-          <span className={styles.count}>{count}</span>
-        </div>
-        <button className={styles.deleteButton} onClick={handleDelete}>
-          DELETE
-        </button>
-      </div> */}
       <ButtonPanel        
         handleDelete={handleDelete}
         count={count}
