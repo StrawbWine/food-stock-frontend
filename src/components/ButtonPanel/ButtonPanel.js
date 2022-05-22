@@ -1,20 +1,12 @@
 import styles from "./ButtonPanel.module.css"
+import PlusButton from "../Buttons/PlusButton/PlusButton"
+import MinusButton from "../Buttons/MinusButton/MinusButton"
 
 const ButtonPanel = ({handleDelete, count, onPlusClick, onMinusClick}) => {
   return (
     <div className={styles.buttonPanel}>
-      <button
-        className={styles.plusButton}
-        onClick={onPlusClick}
-      >
-        +
-      </button>
-      <button
-        className={styles.minusButton}
-        onClick={onMinusClick}
-      >
-        -
-      </button>
+      <PlusButton onClick={onPlusClick} />
+      <MinusButton onClick={onMinusClick} />
       <div className={styles.countBox}>
         <span className={styles.count}>{count}</span>
       </div>
