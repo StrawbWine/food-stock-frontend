@@ -1,0 +1,11 @@
+.countBox {
+  padding-left: 50px;
+  padding-right: 10px;
+  background-color: gainsboro;
+  border: 1px solid black;
+}
+
+.count {
+  text-align: right;
+  font-size: 1.4em;
+}
