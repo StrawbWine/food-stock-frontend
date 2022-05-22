@@ -1,6 +1,10 @@
 import React, { useState } from "react"
-import styles from "./FoodType.module.css"
 import axios from "axios"
+
+import ButtonPanel from "../ButtonPanel/ButtonPanel"
+
+import styles from "./FoodType.module.css"
+
 
 const FoodType = props => {
   const API_URL = process.env.REACT_APP_API_URL
@@ -14,6 +18,10 @@ const FoodType = props => {
     props.getFoodTypes()
   }
 
+  const onPlusClick = () => setCount(count + 1)
+
+  const onMinusClick = () => setCount(count - 1)
+
   return (
     <div className={styles.div}>
       <ul className={styles.ul}>
@@ -22,7 +30,7 @@ const FoodType = props => {
         <li>Number of calories: {kcalPerHundredGrams}</li>
         <li>Weight: {weightInGrams}</li>
       </ul>
-      <div className={styles.buttonPanel}>
+      {/* <div className={styles.buttonPanel}>
         <button
           className={styles.plusButton}
           onClick={() => setCount(count + 1)}
@@ -41,7 +49,13 @@ const FoodType = props => {
         <button className={styles.deleteButton} onClick={handleDelete}>
           DELETE
         </button>
-      </div>
+      </div> */}
+      <ButtonPanel        
+        handleDelete={handleDelete}
+        count={count}
+        onPlusClick={onPlusClick} 
+        onMinusClick={onMinusClick}
+      />
     </div>
   )
 }
