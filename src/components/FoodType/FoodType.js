@@ -7,7 +7,7 @@ import FoodInfo from "../FoodInfo/FoodInfo"
 import styles from "./FoodType.module.css"
 
 
-const FoodType = ({ data, getFoodTypes }) => {
+const FoodType = ({ data, getFoodTypes, handleFoodTypeClick }) => {
   const API_URL = process.env.REACT_APP_API_URL
 
   const [count, setCount] = useState(0)
@@ -15,14 +15,14 @@ const FoodType = ({ data, getFoodTypes }) => {
   const handleDelete = async () => {
     await axios.delete(`${API_URL}/foodtypes/${data.id}`)
     getFoodTypes()
-  }
+  }  
 
   const onPlusClick = () => setCount(count + 1)
 
   const onMinusClick = () => setCount(count - 1)
 
   return (
-    <div className={styles.foodType}>
+    <div className={styles.foodType} onClick={handleFoodTypeClick}>
       <FoodInfo data={data} />
       <ButtonPanel        
         handleDelete={handleDelete}
