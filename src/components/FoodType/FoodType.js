@@ -22,7 +22,7 @@ const FoodType = ({ data, getFoodTypes, handleFoodTypeClick }) => {
   const onMinusClick = () => setCount(count - 1)
 
   return (
-    <div className={styles.foodType} onClick={handleFoodTypeClick}>
+    <div className={styles.foodType} onClick={() => handleFoodTypeClick(data.name)}>
       <FoodInfo data={data} />
       <ButtonPanel        
         handleDelete={handleDelete}

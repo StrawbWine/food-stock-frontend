@@ -1,4 +1,5 @@
 import { useState } from "react"
+import axios from "axios"
 
 import "./App.css"
 import AddFoodTypeForm from "./components/AddFoodTypeForm/AddFoodTypeForm"
@@ -13,23 +14,28 @@ function App() {
   const [foodTypes, getFoodTypes] = useApi(`${API_URL}/foodtypes`)
   const [foodInstanceData, setFoodInstanceData] = useState(null)
 
-  const testInstances = [
-    {
-      id: 1,
-      foodType: "Pizza",
-      purchaseDate: "2022-05-10",
-      expirationDate: "2023-05-10"
-    },
-    {
-      id: 2,
-      foodType: "Jarlsberg",
-      purchaseDate: "2022-05-10",
-      expirationDate: "2023-05-10"
-    },
-  ]
+  // const testInstances = [
+  //   {
+  //     id: 1,
+  //     foodType: "Pizza",
+  //     purchaseDate: "2022-05-10",
+  //     expirationDate: "2023-05-10"
+  //   },
+  //   {
+  //     id: 2,
+  //     foodType: "Jarlsberg",
+  //     purchaseDate: "2022-05-10",
+  //     expirationDate: "2023-05-10"
+  //   },
+  // ]
 
-  const handleFoodTypeClick = foodTypeName => {
-    setFoodInstanceData(testInstances)
+  const handleFoodTypeClick = async foodTypeName => {    
+    try {      
+      const result = await axios.get(`${API_URL}/foodinstances?food_type_name=${foodTypeName}`)   
+      setFoodInstanceData(result.data)
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   return (
