@@ -1,0 +1,13 @@
+.foodInstance {
+  border: solid 1px black;
+  margin: 10px;
+}
+
+.title {
+  margin: 10px;
+}
+
+.list {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;   
+}
