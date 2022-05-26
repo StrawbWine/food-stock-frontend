@@ -29,21 +29,23 @@ function App() {
   //   },
   // ]
 
-  const handleFoodTypeClick = async foodTypeName => {    
-    try {      
-      const result = await axios.get(`${API_URL}/foodinstances?food_type_name=${foodTypeName}`)   
-      setFoodInstanceData(result.data)
-    } catch (error) {
-      console.error(error);
-    }
+  const getFoodInstances = async foodTypeName => {    
+      try {      
+        const result = await axios.get(`${API_URL}/foodinstances?food_type_name=${foodTypeName}`)   
+        setFoodInstanceData(result.data)
+      } catch (error) {
+        console.error(error);
+      }
   }
+
+  const handleFoodTypeClick = getFoodInstances
 
   return (
     <div className="App">
       <Header />
       <FoodContainer foodTypes={foodTypes} getFoodTypes={getFoodTypes} handleFoodTypeClick={handleFoodTypeClick} />
       <AddFoodTypeForm getFoodTypes={getFoodTypes} />
-      {foodInstanceData && <FoodInstanceContainer foodInstances={foodInstanceData} />}
+      {foodInstanceData && <FoodInstanceContainer foodInstances={foodInstanceData} getFoodInstances={getFoodInstances} />}
     </div>
   )
 }
