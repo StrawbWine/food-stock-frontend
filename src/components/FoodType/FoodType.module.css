@@ -12,13 +12,12 @@
 .foodTypeSelected {
   display: flex;
   flex-direction: column;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 3px;
   padding: 1px;
   margin: 5px;
   background-color: rgba(1, 11, 30, 0.653);
-  color:hsl(0, 0%, 100%);
-  size: 2rem;
+  color:hsl(0, 0%, 100%);  
 }
 
 .foodType:hover {
