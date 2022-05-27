@@ -6,6 +6,7 @@
   padding: 1px;
   margin: 5px;
   background-color: azure;
+  box-shadow: 1px -1px 1px 0px gray;
 }
 
 .foodTypeSelected {
@@ -16,5 +17,17 @@
   padding: 1px;
   margin: 5px;
   background-color: rgba(1, 11, 30, 0.653);
-  color:hsl(0, 0%, 100%);  
+  color:hsl(0, 0%, 100%);
+  size: 2rem;
+}
+
+.foodType:hover {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 1px;
+  margin: 5px;
+  background-color: azure;
+  box-shadow: 0 0 5px 0px rgb(253, 219, 1);
 }
