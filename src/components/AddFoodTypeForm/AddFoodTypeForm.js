@@ -27,7 +27,7 @@ const AddFoodTypeForm = ({ getFoodTypes }) => {
   return (
     <div className={styles.frame}>
       <div className={styles.header}>
-        <h3 className={styles.title}>Add new food type</h3>
+        <h4 className={styles.title}>Add new food type</h4>
         <button className={styles.minMaxButton} onClick={handleMinMaxClick}>{minimized ? "+" : "-"}</button>
       </div>
       {

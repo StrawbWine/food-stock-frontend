@@ -3,7 +3,7 @@
   flex-direction: column;
   padding: 10px;
   margin: 10px;
-  margin-top: -10px;
+  margin-top: -10px;  
 }
 
 input {
@@ -23,10 +23,12 @@ input {
 
 .frame {
   display: inline-block;
-  border: 2px solid rgb(43, 3, 138);
+  border: 1px solid rgb(51, 150, 137);
   border-radius: 3px;
   text-align: center;
-  margin-left: 15px;
+  margin: 20px;
+  background-color: rgb(242, 255, 220);
+
 }
 
 .minMaxButton {
