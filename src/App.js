@@ -2,11 +2,10 @@ import { useState } from "react"
 import axios from "axios"
 
 import "./App.css"
-import AddFoodTypeForm from "./components/AddFoodTypeForm/AddFoodTypeForm"
-import FoodContainer from "./components/FoodContainer/FoodContainer"
 import FoodInstanceContainer from "./components/FoodInstanceContainer/FoodInstanceContainer"
 import Header from "./components/Header/Header"
 import useApi from "./hooks/useApi"
+import FoodTypePanel from "./components/FoodTypePanel/FoodTypePanel"
 
 function App() {
   const API_URL = process.env.REACT_APP_API_URL
@@ -47,12 +46,11 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <FoodContainer
+      <FoodTypePanel
         foodTypes={foodTypes} 
         getFoodTypes={getFoodTypes} 
         handleFoodTypeClick={handleFoodTypeClick}
       />
-      <AddFoodTypeForm getFoodTypes={getFoodTypes} />
       {foodInstanceData && activeFoodType &&
         <FoodInstanceContainer 
           activeFoodType={activeFoodType} 
