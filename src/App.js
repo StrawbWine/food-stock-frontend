@@ -13,6 +13,7 @@ function App() {
 
   const [foodTypes, getFoodTypes] = useApi(`${API_URL}/foodtypes`)
   const [foodInstanceData, setFoodInstanceData] = useState(null)
+  const [activeFoodType, setActiveFoodType] = useState(null)
 
   // const testInstances = [
   //   {
@@ -38,14 +39,26 @@ function App() {
       }
   }
 
-  const handleFoodTypeClick = getFoodInstances
+  const handleFoodTypeClick = foodTypeName => {
+    setActiveFoodType(foodTypeName)
+    getFoodInstances(foodTypeName)
+  }
 
   return (
     <div className="App">
       <Header />
-      <FoodContainer foodTypes={foodTypes} getFoodTypes={getFoodTypes} handleFoodTypeClick={handleFoodTypeClick} />
+      <FoodContainer
+        foodTypes={foodTypes} 
+        getFoodTypes={getFoodTypes} 
+        handleFoodTypeClick={handleFoodTypeClick}
+      />
       <AddFoodTypeForm getFoodTypes={getFoodTypes} />
-      {foodInstanceData && <FoodInstanceContainer foodInstances={foodInstanceData} getFoodInstances={getFoodInstances} />}
+      {foodInstanceData && activeFoodType &&
+        <FoodInstanceContainer 
+          activeFoodType={activeFoodType} 
+          foodInstances={foodInstanceData} 
+          getFoodInstances={getFoodInstances} 
+        />}
     </div>
   )
 }

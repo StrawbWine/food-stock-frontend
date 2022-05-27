@@ -6,6 +6,7 @@ import styles from "./FoodInstance.module.css"
 const FoodInstance = props => {
   const API_URL = process.env.REACT_APP_API_URL
 
+  const activeFoodType = props.activeFoodType
   const { foodType, purchaseDate, expirationDate } = props.data
 
   const handleDelete = async () => {
@@ -16,7 +17,7 @@ const FoodInstance = props => {
 
   return (
     <div className={styles.foodInstance}>
-      <h3 className={styles.title}>{foodType.name}</h3>
+      <h3 className={styles.title}>{activeFoodType}</h3>
       <ul className={styles.list}>
         <li>Date purchased: {purchaseDate}</li>
         <li>Expiration date: {expirationDate}</li>      

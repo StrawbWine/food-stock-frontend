@@ -2,25 +2,25 @@ import React from "react"
 import styles from "./AddFoodInstanceForm.module.css"
 import axios from "axios"
 
-const AddFoodTypeForm = ({ foodType, getFoodInstances }) => {
+const AddFoodTypeForm = ({ activeFoodType, getFoodInstances }) => {
 
   const API_URL = process.env.REACT_APP_API_URL
 
   const handleFoodInstanceSubmit = async event => {
     event.preventDefault()
     const newFoodInstance = {
-      foodType: foodType,
+      foodType: activeFoodType,
       purchaseDate: document.getElementById("purchase-date").value,
       expirationDate: document.getElementById("expiration-date").value,      
     }
     await axios.post(`${API_URL}/foodinstances`, newFoodInstance)    
-    getFoodInstances(foodType)
+    getFoodInstances(activeFoodType)
   }
 
   return (
     <div className={styles.frame}>
       <form className={styles.form} onSubmit={handleFoodInstanceSubmit}>
-        <h3>Add new instance of {foodType}</h3>
+        <h3>Add new instance of {activeFoodType}</h3>
         <label>Purchase date</label>
         <input type="text" id="purchase-date" placeholder="2022-01-01" />
         <label>Expiration date</label>
