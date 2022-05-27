@@ -28,3 +28,20 @@ input {
   text-align: center;
   margin-left: 15px;
 }
+
+.minMaxButton {
+  margin-bottom: 10px;
+  background-color: rgb(165, 222, 248);
+  font-size: large;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;  
+}
+
+.title {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
