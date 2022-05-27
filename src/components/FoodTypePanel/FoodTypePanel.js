@@ -2,13 +2,14 @@ import AddFoodTypeForm from "../AddFoodTypeForm/AddFoodTypeForm"
 import FoodContainer from "../FoodContainer/FoodContainer"
 import styles from "./FoodTypePanel.module.css"
 
-const FoodTypePanel = ({ foodTypes, getFoodTypes, handleFoodTypeClick }) => {
+const FoodTypePanel = ({ activeFoodType, foodTypes, getFoodTypes, selectFoodType }) => {
   return (
     <div className={styles.foodTypePanel}>
       <FoodContainer
+        activeFoodType={activeFoodType}
         foodTypes={foodTypes} 
         getFoodTypes={getFoodTypes} 
-        handleFoodTypeClick={handleFoodTypeClick}
+        selectFoodType={selectFoodType}
       />
       <AddFoodTypeForm getFoodTypes={getFoodTypes} />
     </div>

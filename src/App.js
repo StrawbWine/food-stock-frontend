@@ -38,7 +38,7 @@ function App() {
       }
   }
 
-  const handleFoodTypeClick = foodTypeName => {
+  const selectFoodType = foodTypeName => {
     setActiveFoodType(foodTypeName)
     getFoodInstances(foodTypeName)
   }
@@ -47,9 +47,10 @@ function App() {
     <div className="App">
       <Header />
       <FoodTypePanel
+        activeFoodType={activeFoodType}
         foodTypes={foodTypes} 
         getFoodTypes={getFoodTypes} 
-        handleFoodTypeClick={handleFoodTypeClick}
+        selectFoodType={selectFoodType}
       />
       {foodInstanceData && activeFoodType &&
         <FoodInstanceContainer 
