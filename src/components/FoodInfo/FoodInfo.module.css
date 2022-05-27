@@ -11,3 +11,11 @@ li {
   font-size: 1.2em;
   margin: 0px;
 }
+
+img {
+  width: 20px;
+  position: relative;
+  top: 5px;
+  background-color: rgb(192, 234, 255);
+  border-radius: 100%;
+}
