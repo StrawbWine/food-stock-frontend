@@ -1,6 +1,21 @@
 .foodInstance {
   border: solid 1px black;
   margin: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: small;
+  background-color: cornsilk;
+  border-radius: 3px;
+  box-shadow: 1px -1px 1px 1px gray;
+}
+
+.foodInstance:hover {
+  border: solid 1px black;
+  margin: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: small;
+  background-color: cornsilk;
+  border-radius: 3px;
+  box-shadow: 1px -1px 1px 1px yellow;
 }
 
 .title {
