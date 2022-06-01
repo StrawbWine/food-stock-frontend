@@ -6,8 +6,11 @@ import styles from './Sidebar.module.css'
 
 const Sidebar = () => {
   return (
-    <div className={styles.Sidebar}>           
-      <ul>
+    <div className={styles.Sidebar}>
+      <h3 className={styles.SidebarTitle}>
+        Food groups:
+      </h3>        
+      <ul className={styles.ul}>
         {SidebarData.map((val, key) => {          
           return <SidebarRow key={key} val={val} />
         })}

@@ -7,8 +7,11 @@
 
 .SidebarRowIcon {
   flex: 30%;
+  text-align: center;
 }
 
 .SidebarRowTitle {
   flex: 70%;
+  text-align: left;
+  font-size: large;
 }
