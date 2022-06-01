@@ -10,8 +10,7 @@ const FoodInstance = props => {
   const { foodType, purchaseDate, expirationDate } = props.data
 
   const handleDelete = async () => {
-    await axios.delete(`${API_URL}/foodinstances/${props.data.id}`)
-    console.log("props.getFoodInstances", props.getFoodInstances)
+    await axios.delete(`${API_URL}/foodinstances/${props.data.id}`)    
     props.getFoodInstances(foodType.name)
   } 
 

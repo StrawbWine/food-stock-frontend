@@ -3,8 +3,7 @@ import FoodInstance from "../FoodInstance/FoodInstance"
 import AddFoodInstanceForm from "../AddFoodInstanceForm/AddFoodInstanceForm"
 import styles from "./FoodInstanceContainer.module.css"
 
-const FoodInstanceContainer = ({ activeFoodType, foodInstances, getFoodInstances }) => {
-  console.log(foodInstances[0])
+const FoodInstanceContainer = ({ activeFoodType, foodInstances, getFoodInstances }) => {  
   return (
     <div className={styles.foodInstanceContainer}>
       <AddFoodInstanceForm
