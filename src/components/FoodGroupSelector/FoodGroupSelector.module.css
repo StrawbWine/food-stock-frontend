@@ -1,0 +1,4 @@
+.FoodGroupSelector {
+  display: flex;
+  flex-direction: column;
+}

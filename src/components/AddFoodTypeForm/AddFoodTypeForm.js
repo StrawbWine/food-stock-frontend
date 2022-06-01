@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import styles from "./AddFoodTypeForm.module.css"
 import axios from "axios"
+import FoodGroupSelector from "../FoodGroupSelector/FoodGroupSelector"
 
 const AddFoodTypeForm = ({ getFoodTypes }) => {
 
@@ -12,6 +13,7 @@ const AddFoodTypeForm = ({ getFoodTypes }) => {
     event.preventDefault()
     const newFoodType = {
       name: document.getElementById("foodName").value,
+      foodGroup: document.getElementById("foodGroup").value,
       description: document.getElementById("description").value,
       kcalPerHundredGrams: document.getElementById("calories").value,
       weightInGrams: document.getElementById("weight").value,
@@ -41,6 +43,7 @@ const AddFoodTypeForm = ({ getFoodTypes }) => {
           <input type="text" id="calories" placeholder="0" />
           <label>Weight</label>
           <input type="text" id="weight" placeholder="0" />
+          <FoodGroupSelector id="foodGroup" />
           <input
             type="submit"
             value="Add new food type"
