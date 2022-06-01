@@ -1,0 +1,14 @@
+.SidebarRow {
+  /* border: 1px solid black; */
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.SidebarRowIcon {
+  flex: 30%;
+}
+
+.SidebarRowTitle {
+  flex: 70%;
+}

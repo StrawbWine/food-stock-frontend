@@ -6,6 +6,7 @@ import FoodInstanceContainer from "./components/FoodInstanceContainer/FoodInstan
 import Header from "./components/Header/Header"
 import useApi from "./hooks/useApi"
 import FoodTypePanel from "./components/FoodTypePanel/FoodTypePanel"
+import Sidebar from "./components/Sidebar/Sidebar"
 
 function App() {
   const API_URL = process.env.REACT_APP_API_URL
@@ -45,19 +46,23 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <FoodTypePanel
-        activeFoodType={activeFoodType}
-        foodTypes={foodTypes} 
-        getFoodTypes={getFoodTypes} 
-        selectFoodType={selectFoodType}
-      />
-      {foodInstanceData && activeFoodType &&
-        <FoodInstanceContainer 
-          activeFoodType={activeFoodType} 
-          foodInstances={foodInstanceData} 
-          getFoodInstances={getFoodInstances} 
-        />}
+      <Sidebar />
+      <div className="Main">
+        <Header />      
+        <FoodTypePanel
+          activeFoodType={activeFoodType}
+          foodTypes={foodTypes} 
+          getFoodTypes={getFoodTypes} 
+          selectFoodType={selectFoodType}
+        />
+        {foodInstanceData && activeFoodType &&
+          <FoodInstanceContainer 
+            activeFoodType={activeFoodType} 
+            foodInstances={foodInstanceData} 
+            getFoodInstances={getFoodInstances} 
+          />}
+      </div>
+
     </div>
   )
 }
