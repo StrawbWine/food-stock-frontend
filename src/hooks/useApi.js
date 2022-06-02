@@ -17,7 +17,7 @@ const useApi = url => {
     fetchData()
   }, [])
 
-  return [data, fetchData]
+  return [data, fetchData, setData]
 }
 
 export default useApi

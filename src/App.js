@@ -11,9 +11,19 @@ import Sidebar from "./components/Sidebar/Sidebar"
 function App() {
   const API_URL = process.env.REACT_APP_API_URL
 
-  const [foodTypes, getFoodTypes] = useApi(`${API_URL}/foodtypes`)
+  const [foodTypes, getFoodTypes, setFoodTypes] = useApi(`${API_URL}/foodtypes`)
   const [foodInstanceData, setFoodInstanceData] = useState(null)
   const [activeFoodType, setActiveFoodType] = useState(null)
+  const [activeFoodGroup, setActiveFoodGroup] = useState(null)
+
+  const getFoodTypesByFoodGroup = async foodGroup => {
+    try {      
+      const result = await axios.get(`${API_URL}/foodtypes?food_group=${foodGroup.replace(" ", "+")}`)   
+      setFoodTypes(result.data)
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   // const testInstances = [
   //   {
@@ -46,7 +56,7 @@ function App() {
 
   return (
     <div className="App">
-      <Sidebar />
+      <Sidebar getFoodTypesByFoodGroup={getFoodTypesByFoodGroup}/>
       <div className="Main">
         <Header />      
         <FoodTypePanel

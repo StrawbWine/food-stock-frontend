@@ -5,6 +5,14 @@
   flex-direction: row;
 }
 
+.SidebarRow:hover {
+  /* border: 1px solid black; */
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(174, 247, 159);
+}
+
 .SidebarRowIcon {
   flex: 30%;
   text-align: center;
